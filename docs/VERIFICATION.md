@@ -2,6 +2,18 @@
 
 [Deutsch](VERIFICATION.de.md) · [Project overview](../README.md)
 
+## Interface review — 19 October 2026
+
+Private application revision: `81eadec6dcd0711006fae2ac8dea94b73d37fb59`. Compact role-aware overview, direct administrator import access and consistent Scope CRM branding.
+
+**53 application tests / 430 assertions and 4 browser workflows passed**, with no failures, skips or browser retries. PHP style checking and the production build passed. The workflows include desktop and 390-pixel mobile views; screenshots were visually reviewed and refreshed from this source.
+
+Browser workflows ran in a new local clone with a newly created synthetic database. Existing installed dependencies were copied into this isolated check environment; they were not reinstalled. Application tests ran against the same source in the private application checkout. Dependency manifests and lockfiles are unchanged. No new live HTTP measurement, dependency advisory scan or fresh dependency installation is claimed for this interface revision.
+
+The checks below retain their original date and scope.
+
+## Earlier full verification — 18 October 2026
+
 These are results from the private, independent CRM application, checked locally on **18 October 2026**. This presentation repository contains no application test suite and does not claim a GitHub-hosted application run. Detailed logs, source and generated access credentials are not published.
 
 | Check | Observed result |
@@ -18,7 +30,7 @@ These are results from the private, independent CRM application, checked locally
 | Local environment | macOS 26.6, PHP 8.4.23, Composer 2.10.1, Node 24.19.0, Google Chrome 155.0.8059.84 |
 | Views | Desktop 1440 × 1060 and mobile 390 × 844; no document overflow in checked views; the mobile CSV table scrolls intentionally |
 
-The complete fresh-clone run superseded earlier separate browser runs. Existing screenshots were taken from the same application source with synthetic data. The user-facing demo was not used for browser write tests.
+The 18 October fresh-clone run superseded the earlier separate browser runs. Current screenshots were refreshed during the 19 October interface review with synthetic data. The user-facing demo was not used for browser write tests.
 
 The private application has a GitHub Actions configuration, but it was not executed remotely and is not included in this presentation. Public application CI, a downloadable software release and a hosted service are outside this repository's scope.
 

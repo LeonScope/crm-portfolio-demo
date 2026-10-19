@@ -2,6 +2,18 @@
 
 [English](VERIFICATION.md) · [Projektübersicht](../README.de.md)
 
+## Oberflächenprüfung — 19. Oktober 2026
+
+Privater Anwendungsstand: `81eadec6dcd0711006fae2ac8dea94b73d37fb59`. Kompakte rollenbezogene Übersicht, direkter Importzugang für Administratoren und einheitliche Bezeichnung Scope CRM.
+
+**53 Anwendungstests mit 430 Einzelprüfungen und 4 Browserabläufe bestanden**, ohne Fehler, übersprungene Tests oder Browser-Wiederholungsversuche. PHP-Stilprüfung und Produktionsbuild bestanden. Die Abläufe umfassen Desktop- und Smartphone-Ansichten bei 390 Pixeln; die Screenshots wurden aus diesem Stand erneuert und visuell geprüft.
+
+Die Browserabläufe liefen in einer neuen lokalen Git-Kopie mit einer neu erzeugten synthetischen Datenbank. Bereits installierte Abhängigkeiten wurden in diese getrennte Prüfumgebung kopiert und nicht neu installiert. Die Anwendungstests liefen auf demselben Quellstand in der privaten Anwendungskopie. Abhängigkeitslisten und Lockfiles sind unverändert. Für diese Oberflächenrevision wird kein neuer echter HTTP-Messwert, keine erneute Abhängigkeitswarnprüfung und keine frische Installation der Abhängigkeiten behauptet.
+
+Die folgenden Nachweise behalten ihr ursprüngliches Datum und ihren Prüfumfang.
+
+## Frühere vollständige Prüfung — 18. Oktober 2026
+
 Diese Ergebnisse stammen aus der privaten, eigenständig entwickelten CRM-Anwendung und wurden am **18. Oktober 2026 lokal geprüft**. Das Präsentationsrepository enthält keine Anwendungstests und behauptet keinen Prüflauf der Anwendung auf GitHub. Detaillierte Protokolle, Quellcode und erzeugte Zugangsdaten werden nicht veröffentlicht.
 
 | Prüfung | Beobachtetes Ergebnis |
@@ -18,7 +30,7 @@ Diese Ergebnisse stammen aus der privaten, eigenständig entwickelten CRM-Anwend
 | Lokale Umgebung | macOS 26.6, PHP 8.4.23, Composer 2.10.1, Node 24.19.0, Google Chrome 155.0.8059.84 |
 | Ansichten | Desktop 1440 × 1060, Smartphone 390 × 844; kein seitliches Überlaufen der geprüften Seiten; die mobile CSV-Tabelle lässt sich bewusst horizontal verschieben |
 
-Der vollständige Lauf in der frischen Kopie ersetzt die früher getrennten Browserprüfungen als aktuellen Nachweis. Die Screenshots wurden mit demselben Anwendungsstand und erfundenen Daten aufgenommen. Schreibende Browserprüfungen verwendeten eine getrennte Prüfkopie.
+Der vollständige Lauf in der frischen Kopie vom 18. Oktober ersetzte die zuvor getrennten Browserprüfungen. Die aktuellen Screenshots wurden bei der Oberflächenprüfung vom 19. Oktober mit erfundenen Daten erneuert. Schreibende Browserprüfungen verwendeten eine getrennte Prüfkopie.
 
 Für die private Anwendung liegt eine GitHub-Actions-Konfiguration vor. Sie wurde nicht auf GitHub ausgeführt und gehört nicht zu dieser Präsentation. Ein öffentlicher Anwendungstestlauf, ein herunterladbarer Software-Release und eine gehostete Anwendung sind nicht Bestandteil dieses Repositorys.
 

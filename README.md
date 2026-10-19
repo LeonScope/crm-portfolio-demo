@@ -1,42 +1,54 @@
-# CRM Portfolio Demo
+# Scope CRM
 
-**A project presentation by [LeonScope](https://github.com/LeonScope)**
-Full-Stack Developer · AI-Assisted Product Builder
+### Customer work, with clear ownership.
+
+**Business application · Laravel · Local portfolio demo**
 
 [Deutsch](README.de.md) · [Case study](docs/CASE-STUDY.md) · [Verification](docs/VERIFICATION.md)
 
-A CRM for small sales and service teams: manage customers, assign responsibility, record conversations and plan the next appointment. This repository presents the project through screenshots, engineering decisions and documented local checks. **The application source is kept private.**
+A customer record is useful when the next person can see who is responsible, what was discussed and what happens next. Scope CRM brings assignments, appointments, notes and change history into one workspace. Built by **[LeonScope](https://github.com/LeonScope)** with AI assistance as an independent demo using fictional data.
 
-![Dashboard with synthetic customers, appointments and activity](assets/dashboard-desktop.png)
+![Scope CRM overview with team responsibilities, appointments and direct CSV import access](assets/dashboard-desktop.png)
 
-## What the application demonstrates
+## A working day in the CRM
 
-- **Customer workflow:** searchable customer records, assignments, notes, appointments, archive and restore.
-- **Two roles:** administrators manage the team’s customers; employees access only their assigned, unarchived records. The server enforces these rules.
-- **Consistent history:** relevant changes and their activity entries are written together.
-- **Reviewed CSV imports:** upload → validation and preview → explicit confirmation; an invalid import creates no customers.
-- **A usable local demo:** German interface, desktop and mobile views, 40 synthetic customers and three generated local accounts.
+| Work | Visible behavior |
+| :--- | :--- |
+| Prepare a conversation | Find the customer, review notes and see upcoming appointments. |
+| Assign responsibility | Administrators manage the team view; employees work with their assigned customers. The server enforces access. |
+| Keep a useful record | Customer and appointment changes are stored together with their history entries. |
+| Bring in new customers | Upload a CSV, inspect every row and confirm before anything is imported. |
 
-## Selected screens
+The revised overview puts customer work ahead of decoration: a compact introduction, a visible role label and direct access to the customer list and administrator import. The green business interface keeps navigation familiar.
 
-| Desktop import preview | Mobile validation feedback |
-| --- | --- |
-| [![CSV preview](assets/import-preview-desktop.png)](assets/import-preview-desktop.png) | <img src="assets/import-errors-mobile.png" width="220" alt="Mobile CSV preview with invalid and duplicate rows"> |
+## Import with a review step
 
-[Mobile customer list](assets/customers-mobile.png)
+**Upload → validation and preview → explicit confirmation.** Invalid imports create no customers. Checks cover duplicates, archived records, ownership, expired previews and changed files; imports add new records rather than updating existing ones.
 
-## Engineering evidence
+![CSV import preview with validation before confirmation](assets/import-preview-desktop.png)
 
-**53 application tests · 430 assertions · 4 browser workflows passed.** These results were obtained in a fresh local checkout on 18 October 2026. Installation, repeat setup, PHP style, the production build and dependency checks also passed. This public presentation does not run or claim public application CI. See the [verification record and limits](docs/VERIFICATION.md).
+<details>
+<summary><strong>Phone views</strong> — customer search and import errors</summary>
 
-The application uses **Laravel 13, PHP 8.4, Blade, SQLite and Vite**. PHPUnit covers business rules and failure cases; Playwright checks complete browser workflows. The [case study](docs/CASE-STUDY.md) explains the design choices and a short interview walkthrough.
+<table><tr>
+<td valign="top"><strong>Customer list</strong><br /><img src="assets/customers-mobile.png" width="300" alt="Mobile CRM customer list and search" /></td>
+<td valign="top"><strong>Import validation</strong><br /><img src="assets/import-errors-mobile.png" width="300" alt="Mobile CSV preview showing invalid and duplicate rows" /></td>
+</tr></table>
 
-## Role and AI assistance
+</details>
 
-LeonScope set the portfolio goal, approved the product scope and guided the iterations. Codex generated implementation, interface, synthetic data and tests, and ran the recorded checks. The project documents that assistance and the corrections made during verification. The CRM itself does not call an AI model.
+## What this project demonstrates
 
-## Availability and rights
+Role-based workflows, transactional history and a guarded data import in **Laravel 13, PHP 8.4, Blade, SQLite and Vite**. The local demo starts with 40 fictional customers and three generated accounts.
 
-This is a portfolio presentation, not a downloadable application or a hosted service. It contains no application source, installation package, local credentials or customer database. Screenshots show synthetic data from an independent demo.
+**53 application tests / 430 assertions and four browser workflows passed.** The interface was rechecked on 19 October 2026; the earlier clean-install verification remains documented separately. [Results, environment and limits](docs/VERIFICATION.md).
 
-**No open-source license or general permission to reuse the original portfolio material is granted.** Applicable law, GitHub’s platform terms and third-party rights remain unaffected. See [rights notice](RIGHTS.md).
+LeonScope set the portfolio objective, confirmed product direction and scope, and steered the iterations. Codex generated the implementation, interface, synthetic data and tests and performed the documented verification. The CRM itself does not call an AI model.
+
+## Project access
+
+This is a **presentation-only repository** for a functional local application. Source, credentials, databases and installable packages remain private. There is no public hosted application or public application CI. The independent demo contains no former-client code or business data.
+
+No open-source license, Creative Commons license or general reuse permission is granted for original portfolio material. Statutory rights, GitHub platform terms and third-party rights remain unaffected. [Rights notice](RIGHTS.md).
+
+[Case study and interview walkthrough](docs/CASE-STUDY.md) · [Verification](docs/VERIFICATION.md) · [LeonScope](https://github.com/LeonScope)

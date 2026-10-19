@@ -1,42 +1,54 @@
-# CRM Portfolio Demo
+# Scope CRM
 
-**Eine Projektpräsentation von [LeonScope](https://github.com/LeonScope)**
-Full-Stack Developer · AI-Assisted Product Builder
+### Kundenarbeit mit klaren Zuständigkeiten.
+
+**Geschäftsanwendung · Laravel · Lokale Portfolio-Demo**
 
 [English](README.md) · [Fallstudie](docs/CASE-STUDY.de.md) · [Prüfergebnisse](docs/VERIFICATION.de.md)
 
-Ein CRM für kleine Vertriebs- und Serviceteams: Kunden verwalten, Zuständigkeiten klären, Gespräche dokumentieren und nächste Termine planen. Dieses Repository zeigt das Projekt anhand von Screenshots, technischen Entscheidungen und dokumentierten lokalen Prüfungen. **Der Anwendungscode bleibt privat.**
+Ein Kundeneintrag hilft, wenn die nächste Person erkennt, wer zuständig ist, was besprochen wurde und welcher Schritt ansteht. Scope CRM verbindet Zuständigkeiten, Termine, Notizen und Änderungsverlauf in einem Arbeitsbereich. Von **[LeonScope](https://github.com/LeonScope)** mit KI-Unterstützung als eigenständige Demo mit erfundenen Daten entwickelt.
 
-![Übersicht mit erfundenen Kunden, Terminen und Aktivitäten](assets/dashboard-desktop.png)
+![Scope CRM mit Teamübersicht, Terminen und direktem Zugang zum CSV-Import](assets/dashboard-desktop.png)
 
-## Was die Anwendung zeigt
+## Ein Arbeitstag im CRM
 
-- **Kundenablauf:** Kunden suchen, anlegen, bearbeiten und zuweisen; Notizen, Termine, Archiv und Wiederherstellung.
-- **Zwei Rollen:** Administratoren verwalten den Kundenbestand. Mitarbeiter greifen nur auf ihre zugewiesenen, nicht archivierten Kunden zu. Der Server setzt diese Regeln durch.
-- **Nachvollziehbare Änderungen:** Geschäftsvorgang und zugehöriger Verlaufseintrag werden gemeinsam gespeichert.
-- **Geprüfter CSV-Import:** Upload → Prüfung und Vorschau → ausdrückliche Bestätigung. Ein ungültiger Import legt keine Kunden an.
-- **Vorführbare lokale Demo:** deutsche Oberfläche, Desktop- und Smartphone-Ansichten, 40 erfundene Kunden und drei lokal erzeugte Konten.
+| Aufgabe | Sichtbares Verhalten |
+| :--- | :--- |
+| Gespräch vorbereiten | Kunden finden, Notizen lesen und anstehende Termine sehen. |
+| Verantwortung zuweisen | Administratoren verwalten den Teambestand; Mitarbeiter bearbeiten ihre zugeordneten Kunden. Der Server setzt die Zugriffsregeln durch. |
+| Änderungen nachvollziehen | Kunden- und Terminänderungen werden gemeinsam mit ihren Verlaufseinträgen gespeichert. |
+| Neue Kunden übernehmen | CSV hochladen, jede Zeile prüfen und erst anschließend den Import bestätigen. |
 
-## Ausgewählte Ansichten
+Die überarbeitete Übersicht stellt die Kundenarbeit in den Mittelpunkt: kompakte Einführung, sichtbare Rolle und direkter Zugang zur Kundenliste sowie zum Import für Administratoren. Die grüne Geschäftsoberfläche erhält die vertraute Navigation.
 
-| Importvorschau am Desktop | Fehlerprüfung auf dem Smartphone |
-| --- | --- |
-| [![CSV-Vorschau](assets/import-preview-desktop.png)](assets/import-preview-desktop.png) | <img src="assets/import-errors-mobile.png" width="220" alt="Mobile CSV-Vorschau mit ungültigen und doppelten Einträgen"> |
+## Import mit Prüfschritt
 
-[Mobile Kundenliste](assets/customers-mobile.png)
+**Upload → Prüfung und Vorschau → ausdrückliche Bestätigung.** Ungültige Importe legen keine Kunden an. Geprüft werden unter anderem Duplikate, archivierte Einträge, Zuständigkeiten, abgelaufene Vorschauen und veränderte Dateien. Der Import ergänzt neue Kunden; bestehende Datensätze werden nicht aktualisiert.
 
-## Technische Nachweise
+![CSV-Importvorschau mit Prüfung vor der Bestätigung](assets/import-preview-desktop.png)
 
-**53 Anwendungstests · 430 Einzelprüfungen · 4 erfolgreiche Browserabläufe.** Diese Ergebnisse stammen aus einer frisch eingerichteten lokalen Kopie vom 18. Oktober 2026. Neuinstallation, wiederholte Einrichtung, PHP-Codeprüfung, Produktionsbuild und Abhängigkeitsprüfungen waren ebenfalls erfolgreich. Diese öffentliche Präsentation führt keine Anwendungstests auf GitHub aus und behauptet das auch nicht. [Prüfbericht und Grenzen](docs/VERIFICATION.de.md).
+<details>
+<summary><strong>Smartphone-Ansichten</strong> — Kundensuche und Importfehler</summary>
 
-Die Anwendung verwendet **Laravel 13, PHP 8.4, Blade, SQLite und Vite**. PHPUnit prüft Fachregeln und Fehlerfälle; Playwright prüft vollständige Browserabläufe. Die [Fallstudie](docs/CASE-STUDY.de.md) erläutert die Entscheidungen und eine kurze Vorführung für ein Bewerbungsgespräch.
+<table><tr>
+<td valign="top"><strong>Kundenliste</strong><br /><img src="assets/customers-mobile.png" width="300" alt="Mobile Kundenliste mit Suche" /></td>
+<td valign="top"><strong>Importprüfung</strong><br /><img src="assets/import-errors-mobile.png" width="300" alt="Mobile CSV-Vorschau mit ungültigen und doppelten Einträgen" /></td>
+</tr></table>
 
-## Rolle und KI-Unterstützung
+</details>
 
-LeonScope legte das Portfolioziel fest, bestätigte die Produktrichtung und den Umfang und steuerte die Iterationen. Codex erzeugte Implementierung, Oberfläche, Beispieldaten und Tests und führte die dokumentierten Prüfungen aus. Die Unterstützung und die bei der Prüfung vorgenommenen Korrekturen sind offengelegt. Das CRM selbst ruft kein KI-Modell auf.
+## Was dieses Projekt belegt
 
-## Verfügbarkeit und Rechte
+Rollenbasierte Abläufe, gemeinsam gespeicherte Änderungen und Verlaufseinträge sowie einen abgesicherten Datenimport mit **Laravel 13, PHP 8.4, Blade, SQLite und Vite**. Die lokale Demo startet mit 40 erfundenen Kunden und drei erzeugten Konten.
 
-Dies ist eine Portfolio-Präsentation. Sie enthält weder den Anwendungscode noch ein Installationspaket, lokale Zugangsdaten oder eine Kundendatenbank. Eine öffentlich laufende Anwendung wird nicht bereitgestellt. Die Screenshots zeigen ausschließlich erfundene Daten einer eigenständigen Demo.
+**53 Anwendungstests mit 430 Einzelprüfungen und vier Browserabläufe bestanden.** Die Oberfläche wurde am 19. Oktober 2026 erneut geprüft; die frühere Prüfung nach frischer Installation bleibt gesondert dokumentiert. [Ergebnisse, Umgebung und Grenzen](docs/VERIFICATION.de.md).
 
-**Es wird keine Open-Source-Lizenz oder allgemeine Erlaubnis zur Weiterverwendung des eigenen Portfolio-Materials erteilt.** Gesetzliche Rechte, GitHubs Plattformbedingungen und Rechte Dritter bleiben unberührt. [Rechtehinweis](RIGHTS.md).
+LeonScope legte das Portfolioziel fest, bestätigte Produktrichtung und Umfang und steuerte die Iterationen. Codex erzeugte Implementierung, Oberfläche, Beispieldaten und Tests und führte die dokumentierten Prüfungen aus. Das CRM selbst ruft kein KI-Modell auf.
+
+## Zugang zum Projekt
+
+Dieses Repository enthält **ausschließlich die Präsentation** einer funktionsfähigen lokalen Anwendung. Quellcode, Zugangsdaten, Datenbanken und Installationspakete bleiben privat. Es gibt keine öffentlich gehostete Anwendung und keine öffentliche Anwendungs-CI. Die eigenständige Demo enthält weder Quellcode noch Geschäftsdaten des früheren Auftraggebers.
+
+Es wird keine Open-Source-Lizenz, Creative-Commons-Lizenz oder allgemeine Erlaubnis zur Weiterverwendung des eigenen Portfolio-Materials erteilt. Gesetzliche Rechte, GitHubs Plattformbedingungen und Rechte Dritter bleiben unberührt. [Rechtehinweis](RIGHTS.md).
+
+[Fallstudie und Vorführung](docs/CASE-STUDY.de.md) · [Prüfergebnisse](docs/VERIFICATION.de.md) · [LeonScope](https://github.com/LeonScope)
