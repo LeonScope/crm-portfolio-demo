@@ -1,14 +1,14 @@
-# CRM Portfolio Demo — Fallstudie
+# Scope CRM — Fallstudie
 
 [English](CASE-STUDY.md) · [Projektübersicht](../README.de.md) · [Prüfbericht](VERIFICATION.de.md)
 
 Ein eigenständiges, mit KI-Unterstützung entwickeltes Laravel-CRM von **LeonScope**. Das Projekt zeigt einen vollständigen Kundenablauf mit serverseitigen Berechtigungen, Terminen, Änderungsverlauf und bestätigtem CSV-Import. Es läuft lokal mit erfundenen Daten und benötigt keinen externen Geschäftsdienst.
 
-## Ausgangsproblem
+## Wofür die Demo gedacht ist
 
-Ein kleines Vertriebs- oder Serviceteam muss vier Fragen beantworten können: Wer ist der Kunde? Wer ist zuständig? Was wurde besprochen? Was passiert als Nächstes? Der Ablauf soll auch dann stimmen, wenn Zuständigkeiten wechseln, Kunden archiviert oder Tabellen importiert werden.
+In einem kleinen Vertriebs- oder Serviceteam müssen Kundendaten, Gesprächsnotizen und Termine zusammenpassen. Wechselt die Zuständigkeit, soll die neue Person weiterarbeiten können. Die bisher zuständige Person soll anschließend keinen Zugriff mehr haben.
 
-Die Demo bildet dieses Szenario mit bewusst begrenztem Umfang ab: ein Team, zwei Rollen und wenige miteinander verbundene Abläufe. Das Ergebnis lässt sich prüfen, ohne Quellcode oder Daten eines früheren Auftraggebers zu verwenden.
+Die Demo bildet das für ein Team mit zwei Rollen ab. Sie wurde neu aufgebaut, damit sich die Abläufe ohne Code oder Daten eines früheren Auftraggebers zeigen lassen.
 
 ## Umsetzung
 
@@ -23,7 +23,7 @@ Der CSV-Import folgt **Upload → Vorschau → Bestätigung**. Alle Einträge m�
 | Entscheidung | Begründung und Grenze |
 | --- | --- |
 | Laravel, Blade und eine Anwendung | Anmeldung, Validierung, Ansichten und Fachregeln bleiben zusammen. Ein separates Frontend mit eigener API würde für diesen Ablauf zusätzliche Komplexität schaffen. |
-| SQLite | Die Demo lässt sich ohne Datenbankdienst starten. Daraus folgt kein Nachweis für MySQL oder hohe gleichzeitige Produktionslast. |
+| SQLite | Die lokale Demo läuft ohne separaten Datenbankdienst. MySQL und eine hohe Zahl gleichzeitiger Zugriffe wurden nicht getestet. |
 | Policies und eingeschränkte Datenabfragen | Direkte Aufrufe und Schreibzugriffe beachten dieselben Regeln wie die Oberfläche. Ein ausgeblendeter Button allein schützt keine Daten. |
 | Gemeinsame Feldvalidierung | Kundenformular und CSV verwenden dieselben Längen-, Status- und Eindeutigkeitsregeln. |
 | Transaktionen mit Änderungsverlauf | Geschäftsvorgang und Verlaufseintrag gelingen gemeinsam. Der Verlauf schützt nicht vor jemandem mit direktem Datenbankzugriff. |
@@ -32,15 +32,15 @@ Der CSV-Import folgt **Upload → Vorschau → Bestätigung**. Alle Einträge m�
 
 ## Nachweise und Erkenntnisse
 
-Die lokale Testsuite umfasst **53 Tests mit 430 Einzelprüfungen**. Vier Browserabläufe prüfen Kundenverwaltung, Berechtigungen, Tastaturbedienung, mobile Darstellung und CSV-Import. Der [Prüfbericht](VERIFICATION.de.md) ordnet Ergebnisse den tatsächlichen Quellständen und Läufen zu. Diese Zahlen belegen geprüfte Softwareabläufe; sie sind keine erfundenen Nutzer- oder Einsparungskennzahlen.
+Die lokale Testsuite umfasst **53 Tests mit 430 Einzelprüfungen**. Vier Browserabläufe prüfen Kundenverwaltung, Berechtigungen, Tastaturbedienung, mobile Darstellung und CSV-Import. Der [Prüfbericht](VERIFICATION.de.md) ordnet Ergebnisse den tatsächlichen Quellständen und Läufen zu. Die Ergebnisse beschreiben das geprüfte Verhalten der Demo. Sie messen keine Nutzung im Produktivbetrieb oder betriebliche Einsparungen.
 
 Zwei konkrete Erkenntnisse aus der Implementierung: Das Verlaufsfeld `changes` kollidierte mit einer internen Eloquent-Eigenschaft und musste gezielt als gespeichertes Attribut gelesen werden. Bei der Dateibereinigung war eine stabile Verarbeitung nach ID erforderlich, damit nach der Bearbeitung früherer Einträge keine späteren übersprungen werden. Beide Fälle sind durch Tests abgesichert. Auch ungültige Importe und simulierte Speicherfehler gehören zur Prüfung.
 
-## Rolle und KI-Unterstützung
+## Mein Anteil und die KI-Unterstützung
 
-LeonScope legte das Portfolioziel fest, bestätigte die eigenständige Produktrichtung und den Funktionsumfang und steuerte die Iterationen. Codex erzeugte Implementierung, Oberfläche, Beispieldaten und Tests und führte die dokumentierten Prüfungen aus. Die Unterstützung ist offengelegt; der Code wird nicht als vollständig manuell geschrieben dargestellt.
+Ich habe mich für eine eigenständige CRM-Demo entschieden, den Umfang bestätigt und die Überarbeitung begleitet. Codex hat Code, Oberfläche, Beispieldaten und Tests erstellt und die dokumentierten Prüfungen ausgeführt.
 
-Das Projekt zeigt den Weg von Anforderungen zu einer prüfbaren Anwendung mit klaren Grenzen und dokumentierten Korrekturen. Das CRM ruft kein KI-Modell auf und behauptet keine KI-Produkteigenschaft. LeonScopes frühere Erfahrung mit Robotik und kameragestützter Prüfung ist eigenständiger beruflicher Hintergrund; diese Demo ist eine neue Webanwendung.
+Die KI-Unterstützung betrifft die Entwicklung. Das CRM selbst verarbeitet Kundendaten nach festen Regeln und verwendet kein KI-Modell.
 
 ## Ablauf einer persönlichen Vorführung
 
@@ -50,6 +50,8 @@ Das Projekt zeigt den Weg von Anforderungen zu einer prüfbaren Anwendung mit kl
 4. Die CSV-Vorlage hochladen, Vorschau prüfen und bestätigen. Dieselbe Datei erneut hochladen, um die Duplikatprüfung zu zeigen.
 5. Tests öffnen und einen Fehlerfall, eine Architekturentscheidung und eine aktuelle Grenze erklären.
 
-## Stand der Präsentation
+## Was hier veröffentlicht ist
 
-Der lokale Funktionskern ist umgesetzt und geprüft. Dieses öffentliche Repository enthält Fallstudie, Screenshots und eine Zusammenfassung der lokalen Prüfungen. Der Anwendungscode bleibt privat; eine Open-Source-Lizenz wird nicht erteilt. Die oben beschriebene Vorführung bezieht sich auf die lokale Anwendung, nicht auf einen öffentlichen Download. Eine öffentliche Bereitstellung, externe Kalender/E-Mails, Mandantenfähigkeit, Produktionslast-Prüfung oder der aktuelle Betrieb eines früheren Kundenprojekts werden nicht behauptet. [Rechtehinweis](../RIGHTS.md).
+Die lokale Anwendung ist umgesetzt und geprüft. Dieses Repository enthält ihre Beschreibung, Screenshots und Testergebnisse. Der Quellcode bleibt privat; eine Open-Source-Lizenz wird nicht erteilt. Die Vorführung oben bezieht sich auf die lokale Demo, die nicht als Download angeboten wird.
+
+Öffentliches Hosting, externe Kalender oder E-Mails und mehrere getrennte Kundenteams sind nicht eingebaut. Eine Prüfung unter Produktionslast wurde nicht durchgeführt. Der heutige Betrieb des früheren Kundenprojekts gehört nicht zu dieser Demo. [Rechtehinweis](../RIGHTS.md).

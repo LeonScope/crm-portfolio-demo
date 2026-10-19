@@ -1,25 +1,25 @@
 # Scope CRM
 
-### Customer work, with clear ownership.
+### Customers, appointments and responsibilities in one place
 
 **Business application · Laravel · Local portfolio demo**
 
 [Deutsch](README.de.md) · [Case study](docs/CASE-STUDY.md) · [Verification](docs/VERIFICATION.md)
 
-A customer record is useful when the next person can see who is responsible, what was discussed and what happens next. Scope CRM brings assignments, appointments, notes and change history into one workspace. Built by **[LeonScope](https://github.com/LeonScope)** with AI assistance as an independent demo using fictional data.
+Scope CRM is a local demo for a small team managing customer relationships. Each customer has an assigned team member, conversation notes and appointments. An activity history records changes. The project was developed with AI assistance and uses fictional data throughout.
 
 ![Scope CRM overview with team responsibilities, appointments and direct CSV import access](assets/dashboard-desktop.png)
 
 ## A working day in the CRM
 
-| Work | Visible behavior |
+| Task | How it works |
 | :--- | :--- |
 | Prepare a conversation | Find the customer, review notes and see upcoming appointments. |
 | Assign responsibility | Administrators manage the team view; employees work with their assigned customers. The server enforces access. |
 | Keep a useful record | Customer and appointment changes are stored together with their history entries. |
 | Bring in new customers | Upload a CSV, inspect every row and confirm before anything is imported. |
 
-The revised overview puts customer work ahead of decoration: a compact introduction, a visible role label and direct access to the customer list and administrator import. The green business interface keeps navigation familiar.
+The overview shows upcoming appointments and recent changes. Administrators see the whole team’s customer list and can open the CSV import from there. Employees see the customers assigned to them.
 
 ## Import with a review step
 
@@ -37,18 +37,18 @@ The revised overview puts customer work ahead of decoration: a compact introduct
 
 </details>
 
-## What this project demonstrates
+## Technology and tests
 
-Role-based workflows, transactional history and a guarded data import in **Laravel 13, PHP 8.4, Blade, SQLite and Vite**. The local demo starts with 40 fictional customers and three generated accounts.
+The application uses **Laravel 13, PHP 8.4, Blade, SQLite and Vite**. Initial setup creates 40 fictional customers and three local accounts.
 
-**53 application tests / 430 assertions and four browser workflows passed.** The interface was rechecked on 19 October 2026; the earlier clean-install verification remains documented separately. [Results, environment and limits](docs/VERIFICATION.md).
+On 19 October 2026, **53 application tests with 430 assertions and four browser workflows passed again**. The [test report](docs/VERIFICATION.md) covers the environment, tested cases and earlier clean installation on 18 October.
 
-LeonScope set the portfolio objective, confirmed product direction and scope, and steered the iterations. Codex generated the implementation, interface, synthetic data and tests and performed the documented verification. The CRM itself does not call an AI model.
+I set the direction and scope of the demo and guided its revisions. Codex generated the code, interface, sample data and tests, and ran the documented checks. AI was used during development; the CRM itself does not use an AI model.
 
-## Project access
+## What is published here
 
-This is a **presentation-only repository** for a functional local application. Source, credentials, databases and installable packages remain private. There is no public hosted application or public application CI. The independent demo contains no former-client code or business data.
+This repository contains **the project write-up and screenshots**. The application runs locally; its source, credentials, database and installable packages remain private. There is no public demo or GitHub application test run. The demo was built separately from my earlier client work and contains none of that client’s code or business data.
 
-No open-source license, Creative Commons license or general reuse permission is granted for original portfolio material. Statutory rights, GitHub platform terms and third-party rights remain unaffected. [Rights notice](RIGHTS.md).
+No open-source license, Creative Commons license or general reuse permission is granted for the original material. See the [rights notice](RIGHTS.md) for details.
 
 [Case study and interview walkthrough](docs/CASE-STUDY.md) · [Verification](docs/VERIFICATION.md) · [LeonScope](https://github.com/LeonScope)

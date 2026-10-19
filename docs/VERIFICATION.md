@@ -6,15 +6,15 @@
 
 Private application revision: `81eadec6dcd0711006fae2ac8dea94b73d37fb59`. Compact role-aware overview, direct administrator import access and consistent Scope CRM branding.
 
-**53 application tests / 430 assertions and 4 browser workflows passed**, with no failures, skips or browser retries. PHP style checking and the production build passed. The workflows include desktop and 390-pixel mobile views; screenshots were visually reviewed and refreshed from this source.
+**53 application tests / 430 assertions and 4 browser workflows passed**, with no failures, skips or browser retries. PHP style checking and the production build passed. The browser tests cover desktop views and a 390-pixel mobile layout. The updated screenshots were captured from this version and visually reviewed.
 
-Browser workflows ran in a new local clone with a newly created synthetic database. Existing installed dependencies were copied into this isolated check environment; they were not reinstalled. Application tests ran against the same source in the private application checkout. Dependency manifests and lockfiles are unchanged. No new live HTTP measurement, dependency advisory scan or fresh dependency installation is claimed for this interface revision.
+Browser workflows ran in a new local clone with a newly created synthetic database. Existing installed dependencies were copied into this isolated check environment; they were not reinstalled. Application tests ran against the same source in the private application checkout. Dependency manifests and lockfiles are unchanged. This round did not include another dependency installation, vulnerability advisory check or real external HTTP measurement.
 
-The checks below retain their original date and scope.
+The earlier installation and test run are recorded below with their original date.
 
 ## Earlier full verification — 18 October 2026
 
-These are results from the private, independent CRM application, checked locally on **18 October 2026**. This presentation repository contains no application test suite and does not claim a GitHub-hosted application run. Detailed logs, source and generated access credentials are not published.
+These are results from the private, independent CRM application, checked locally on **18 October 2026**. The tests ran locally, not on GitHub. The application test suite, detailed logs, source and generated credentials remain private.
 
 | Check | Observed result |
 | --- | --- |
@@ -34,4 +34,4 @@ The 18 October fresh-clone run superseded the earlier separate browser runs. Cur
 
 The private application has a GitHub Actions configuration, but it was not executed remotely and is not included in this presentation. Public application CI, a downloadable software release and a hosted service are outside this repository's scope.
 
-These checks do not establish a security certification, production load readiness, MySQL support, Safari/Firefox coverage or accessibility certification. Dependency advice is a point-in-time result. Concurrent edit conflicts and appointment collision prevention remain outside the demo. CSV imports add new customers; they do not update existing customers.
+Production load, MySQL and Safari/Firefox have not been tested. The project has no security or accessibility certification. The dependency advisory results apply to the date checked. The demo does not resolve simultaneous edits or prevent appointment conflicts. CSV imports add customers without updating existing records.

@@ -1,14 +1,14 @@
-# CRM Portfolio Demo — case study
+# Scope CRM — case study
 
 [Deutsch](CASE-STUDY.de.md) · [Project overview](../README.md) · [Verification](VERIFICATION.md)
 
 An independent, AI-assisted Laravel CRM by **LeonScope**. It demonstrates a complete customer workflow with server-side permissions, appointments, activity history and a confirmed CSV import. It runs locally with synthetic data and no external business service.
 
-## The problem
+## What the demo is for
 
-A small sales or service team needs one place to answer four questions: Who is the customer? Who is responsible? What was discussed? What happens next? The same workflow must remain consistent when responsibility changes, customers are archived or a spreadsheet is imported.
+A small sales or service team needs customer details, notes and appointments to stay together. When responsibility changes, the new team member should be able to pick up the work, while the previous owner loses access.
 
-The demo translates that scenario into a deliberately bounded application: one team, two roles and a small number of connected workflows. It makes the behavior inspectable without relying on a previous client's source code or data.
+The demo covers one team with two roles. It was built separately so these workflows can be demonstrated without using a former client's code or data.
 
 ## The working solution
 
@@ -23,7 +23,7 @@ CSV import follows **upload → preview → confirmation**. All rows must be val
 | Decision | Reason and tradeoff |
 | --- | --- |
 | Laravel, Blade and a single application | Keeps authentication, validation, views and domain rules together. A separate SPA/API would add boundaries without improving this demo's workflow. |
-| SQLite | A reviewer can run the project without a database service. MySQL and high-concurrency production behavior are not claimed. |
+| SQLite | The local demo runs without a separate database service. MySQL and heavy concurrent use have not been tested. |
 | Policies and scoped queries | Direct URLs and writes use the same ownership/archive rules as the interface. Hiding a control is not sufficient. |
 | Shared field validation | Customer forms and CSV rows apply the same field limits, status values and email uniqueness rules. |
 | Transactional writes with activity history | A business change and its audit entry succeed together. History is application-level traceability, not protection against a database administrator. |
@@ -32,15 +32,15 @@ CSV import follows **upload → preview → confirmation**. All rows must be val
 
 ## Evidence and lessons
 
-The local application suite contains **53 tests and 430 assertions**. Four browser workflows cover the customer lifecycle, permissions, keyboard navigation, mobile layouts and CSV import. The [verification record](VERIFICATION.md) identifies the source revisions and actual run scope. These are engineering checks, not claims about production adoption or business savings.
+The local application suite contains **53 tests and 430 assertions**. Four browser workflows cover the customer lifecycle, permissions, keyboard navigation, mobile layouts and CSV import. The [verification record](VERIFICATION.md) identifies the source revisions and actual run scope. The results describe the tested behavior of the demo; they do not measure production use or business savings.
 
 Two concrete implementation lessons emerged: an audit field named `changes` collided with Eloquent's internal property and required explicit attribute access; cleanup needed stable ID-based pagination so processed batches did not cause later ones to be skipped. Regression tests cover both behaviors. Invalid imports and simulated write failures are tested alongside the happy path.
 
-## Role and AI-assisted working method
+## My role and the use of AI
 
-LeonScope selected the portfolio purpose, approved the independent product direction and functional scope, and guided the iterations. Codex generated the implementation, interface, fixtures and tests and ran the recorded checks. The repository documents this assistance rather than presenting the generated code as entirely hand-written.
+I chose to build an independent CRM demo, confirmed the scope and guided the revisions. Codex generated the code, interface, sample data and tests and ran the documented checks.
 
-The demonstrable work is requirements-to-product development with explicit boundaries, verifiable behavior and documented corrections. This CRM does not call an AI model or claim an AI feature. LeonScope's earlier robotics and machine-vision experience is separate professional background; this demo is a new web application.
+AI was used during development. The CRM itself processes customer data using fixed rules and does not use an AI model.
 
 ## Walkthrough for an individual presentation
 
@@ -50,6 +50,8 @@ The demonstrable work is requirements-to-product development with explicit bound
 4. Upload the CSV template, inspect the preview and confirm. Re-upload it to show duplicate feedback.
 5. Show the tests and explain one failure case, one design tradeoff and one current limit.
 
-## Presentation scope
+## What is published here
 
-The local core is implemented and verified. This public repository contains the case study, screenshots and a local verification summary. The application source remains private; no open-source license is granted. The walkthrough above refers to the local application, not a public download. No live hosting, external calendar/email, multitenancy, production load certification or current client deployment is claimed. [Rights notice](../RIGHTS.md).
+The local application is implemented and tested. This repository contains its write-up, screenshots and test results. Source code remains private, with no open-source license granted. The walkthrough above refers to the local demo, which is not offered as a download.
+
+Public hosting, external calendars or email, and separate customer tenants are not implemented. Production load testing has not been performed. The current operation of the earlier client project is separate from this demo. [Rights notice](../RIGHTS.md).

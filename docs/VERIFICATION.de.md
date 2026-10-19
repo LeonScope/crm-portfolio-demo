@@ -6,15 +6,15 @@
 
 Privater Anwendungsstand: `81eadec6dcd0711006fae2ac8dea94b73d37fb59`. Kompakte rollenbezogene Übersicht, direkter Importzugang für Administratoren und einheitliche Bezeichnung Scope CRM.
 
-**53 Anwendungstests mit 430 Einzelprüfungen und 4 Browserabläufe bestanden**, ohne Fehler, übersprungene Tests oder Browser-Wiederholungsversuche. PHP-Stilprüfung und Produktionsbuild bestanden. Die Abläufe umfassen Desktop- und Smartphone-Ansichten bei 390 Pixeln; die Screenshots wurden aus diesem Stand erneuert und visuell geprüft.
+**53 Anwendungstests mit 430 Einzelprüfungen und 4 Browserabläufe bestanden**, ohne Fehler, übersprungene Tests oder Browser-Wiederholungsversuche. PHP-Stilprüfung und Produktionsbuild bestanden. Die Browsertests umfassen Desktop-Ansichten und eine Smartphone-Darstellung bei 390 Pixeln. Die neuen Screenshots stammen aus dieser Version und wurden visuell geprüft.
 
-Die Browserabläufe liefen in einer neuen lokalen Git-Kopie mit einer neu erzeugten synthetischen Datenbank. Bereits installierte Abhängigkeiten wurden in diese getrennte Prüfumgebung kopiert und nicht neu installiert. Die Anwendungstests liefen auf demselben Quellstand in der privaten Anwendungskopie. Abhängigkeitslisten und Lockfiles sind unverändert. Für diese Oberflächenrevision wird kein neuer echter HTTP-Messwert, keine erneute Abhängigkeitswarnprüfung und keine frische Installation der Abhängigkeiten behauptet.
+Die Browserabläufe liefen in einer neuen lokalen Git-Kopie mit einer neu erzeugten synthetischen Datenbank. Bereits installierte Abhängigkeiten wurden in diese getrennte Prüfumgebung kopiert und nicht neu installiert. Die Anwendungstests liefen auf demselben Quellstand in der privaten Anwendungskopie. Abhängigkeitslisten und Lockfiles blieben unverändert. Eine erneute Installation, eine neue Prüfung auf bekannte Paket-Schwachstellen und eine weitere echte externe HTTP-Messung gehörten nicht zu diesem Lauf.
 
-Die folgenden Nachweise behalten ihr ursprüngliches Datum und ihren Prüfumfang.
+Die frühere Installation und der damalige Testlauf sind unten mit ihrem ursprünglichen Datum dokumentiert.
 
 ## Frühere vollständige Prüfung — 18. Oktober 2026
 
-Diese Ergebnisse stammen aus der privaten, eigenständig entwickelten CRM-Anwendung und wurden am **18. Oktober 2026 lokal geprüft**. Das Präsentationsrepository enthält keine Anwendungstests und behauptet keinen Prüflauf der Anwendung auf GitHub. Detaillierte Protokolle, Quellcode und erzeugte Zugangsdaten werden nicht veröffentlicht.
+Diese Ergebnisse stammen aus der privaten, eigenständig entwickelten CRM-Anwendung und wurden am **18. Oktober 2026 lokal geprüft**. Die Tests liefen lokal, nicht auf GitHub. Die Testsuite, ausführliche Protokolle, Quellcode und erzeugte Zugangsdaten bleiben privat.
 
 | Prüfung | Beobachtetes Ergebnis |
 | --- | --- |
@@ -34,4 +34,4 @@ Der vollständige Lauf in der frischen Kopie vom 18. Oktober ersetzte die zuvor 
 
 Für die private Anwendung liegt eine GitHub-Actions-Konfiguration vor. Sie wurde nicht auf GitHub ausgeführt und gehört nicht zu dieser Präsentation. Ein öffentlicher Anwendungstestlauf, ein herunterladbarer Software-Release und eine gehostete Anwendung sind nicht Bestandteil dieses Repositorys.
 
-Die Prüfungen belegen keine Sicherheitszertifizierung, Produktionslastfähigkeit, MySQL-Unterstützung, Safari-/Firefox-Abdeckung oder Barrierefreiheitszertifizierung. Die Abhängigkeitsprüfung gilt für ihren Zeitpunkt. Gleichzeitige Bearbeitungskonflikte und Terminkollisionen liegen außerhalb des Demo-Umfangs. CSV-Importe legen neue Kunden an; bestehende Kunden werden nicht aktualisiert.
+Produktionslast, MySQL und Safari/Firefox wurden nicht geprüft. Eine Sicherheits- oder Barrierefreiheitszertifizierung liegt nicht vor. Das Ergebnis der Paketprüfung gilt für den damaligen Zeitpunkt. Gleichzeitige Änderungen und Terminkollisionen werden in der Demo nicht automatisch aufgelöst. CSV-Importe legen neue Kunden an und aktualisieren keine bestehenden Einträge.
