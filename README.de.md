@@ -47,7 +47,7 @@ Ich habe die Richtung und den Umfang der Demo festgelegt und die Überarbeitung 
 
 ## Veröffentlichung
 
-Hier sind **die Projektbeschreibung und Screenshots** veröffentlicht. Die Anwendung läuft lokal; Quellcode, Zugangsdaten, Datenbank und Installationspakete bleiben privat. Es gibt keinen öffentlichen Demozugang und keinen Anwendungstestlauf auf GitHub. Die Demo wurde neu aufgebaut und enthält keinen Code oder Geschäftsdaten meines früheren Auftraggebers.
+Hier sind **die Projektbeschreibung und Screenshots** veröffentlicht. Die Anwendung läuft lokal; Quellcode, Zugangsdaten, Datenbank und Installationspakete bleiben privat. Es gibt keinen öffentlichen Demozugang und keinen Anwendungstestlauf auf GitHub. Die Demo wurde neu aufgebaut und enthält weder Code noch Geschäftsdaten meines früheren Auftraggebers.
 
 Für das eigene Material wird keine Open-Source- oder Creative-Commons-Lizenz und keine allgemeine Nutzungserlaubnis erteilt. Die Einzelheiten stehen im [Rechtehinweis](RIGHTS.md).
 
